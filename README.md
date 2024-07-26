@@ -1,6 +1,6 @@
 # Pipelined CPU Project
 
-This is a ModelSim project that implements a MIPS pipelined CPU using Verilog. This project builds upon the concepts from the single cycle CPU to create a more efficient CPU by using pipelining.
+This is a ModelSim project that implements a MIPS pipelined CPU using Verilog. This project builds upon the concepts from the single-cycle CPU to create a more efficient CPU by using pipelining.
 
 ## Phase 1
 
@@ -8,6 +8,11 @@ This is a ModelSim project that implements a MIPS pipelined CPU using Verilog. T
 - ID/EX (Instruction Decode/Execution): This register stores the decoded instruction, read data from the registers, and control signals, preparing them for the execution stage.
 - EX/MEM (Execution/Memory Access): This register captures the results of the ALU operations, the data to be written to memory, and control signals, moving them to the memory access stage.
 - MEM/WB (Memory Access/Write Back): This register holds the data read from memory or the ALU result, along with control signals, and passes them to the final stage for writing back to the register file.
+
+## Phase 2
+
+- MUX 32 3 Inputs: This module is a multiplexer that selects one of three 32-bit inputs based on a control signal. It is used for dynamic data routing in a pipelined CPU.
+- Forwarding Unit: This unit is responsible for resolving data hazards by determining if data can be forwarded from later pipeline stages, avoiding stalls. It examines the register status to manage dependencies and improve performance.
 
 ## Datapath
 
