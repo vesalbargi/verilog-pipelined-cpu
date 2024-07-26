@@ -2,8 +2,7 @@ module ALU (
     input [31:0] in1,
     input [31:0] in2,
     input [3:0] operation,
-    output reg [31:0] out,
-    output reg zero
+    output reg [31:0] out
 );
 
   always @(*) begin
@@ -16,6 +15,5 @@ module ALU (
       4'b1100: out <= !(in1 | in2);
       default: out <= 32'b0;
     endcase
-    zero <= (out == 32'b0);
   end
 endmodule

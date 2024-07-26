@@ -1,6 +1,7 @@
 module IF_ID_reg (
     input clk,
     input startin,
+    input IF_IDWrite,
     input [31:0] IF_instr,
     input [31:0] IF_pc_plus_4,
     output reg [31:0] ID_instr,

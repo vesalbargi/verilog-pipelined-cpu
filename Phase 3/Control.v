@@ -1,7 +1,6 @@
 module Control (
     input [5:0] instruction31_26,
     output reg regdst,
-    output reg jump,
     output reg branch,
     output reg memread,
     output reg memtoreg,
@@ -15,7 +14,6 @@ module Control (
     case (instruction31_26)
       6'b000000: begin
         regdst = 1;
-        jump = 0;
         branch = 0;
         memread = 0;
         memtoreg = 0;
@@ -26,7 +24,6 @@ module Control (
       end
       6'b100011: begin
         regdst = 0;
-        jump = 0;
         branch = 0;
         memread = 1;
         memtoreg = 1;
@@ -37,7 +34,6 @@ module Control (
       end
       6'b101011: begin
         regdst = 1'bx;
-        jump = 0;
         branch = 0;
         memread = 0;
         memtoreg = 1'bx;
@@ -48,7 +44,6 @@ module Control (
       end
       6'b000100: begin
         regdst = 1'bx;
-        jump = 0;
         branch = 1;
         memread = 0;
         memtoreg = 1'bx;
@@ -59,7 +54,6 @@ module Control (
       end
       6'b000010: begin
         regdst = 1'bx;
-        jump = 1;
         branch = 0;
         memread = 0;
         memtoreg = 1'bx;
@@ -70,7 +64,6 @@ module Control (
       end
       default: begin
         regdst = 1'bx;
-        jump = 0;
         branch = 0;
         memread = 0;
         memtoreg = 0;
