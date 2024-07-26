@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module test_instruction_memory;
   reg [31:0] address;
   reg startin;

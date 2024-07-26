@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module test_forwarding_unit;
   reg EX_MEM_regWrite;
   reg MEM_WB_regWrite;

@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module test_mux_32_3Inputs;
   reg  [31:0] input1;
   reg  [31:0] input2;
