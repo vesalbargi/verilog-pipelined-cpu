@@ -32,9 +32,9 @@ module EX_MEM_reg (
       MEM_mux_out <= 5'b0;
     end else begin
       MEM_wb <= EX_wb;
-      MEM_branch <= EX_m[2];
+      MEM_branch <= EX_m[0];
       MEM_mem_read <= EX_m[1];
-      MEM_mem_write <= EX_m[0];
+      MEM_mem_write <= EX_m[2];
       MEM_branch_target <= EX_branch_target;
       MEM_zero <= EX_zero;
       MEM_alu_result <= EX_alu_result;

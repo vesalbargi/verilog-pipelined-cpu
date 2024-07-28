@@ -39,9 +39,9 @@ module ID_EX_reg (
     end else begin
       EX_wb <= ID_wb;
       EX_m <= ID_m;
-      EX_reg_dst <= ID_ex[3];
+      EX_reg_dst <= ID_ex[0];
       EX_alu_op <= ID_ex[2:1];
-      EX_alu_src <= ID_ex[0];
+      EX_alu_src <= ID_ex[3];
       EX_pc_plus_4 <= ID_pc_plus_4;
       EX_reg_data1 <= ID_reg_data1;
       EX_reg_data2 <= ID_reg_data2;
