@@ -14,9 +14,17 @@ This is a ModelSim project that implements a MIPS pipelined CPU using Verilog. T
 - MUX 32 3 Inputs: This module is a multiplexer that selects one of three 32-bit inputs based on a control signal. It is used for dynamic data routing in a pipelined CPU.
 - Forwarding Unit: This unit is responsible for resolving data hazards by determining if data can be forwarded from later pipeline stages, avoiding stalls. It examines the register status to manage dependencies and improve performance.
 
+## Phase 3
+
+- MUX 8 2 Inputs: This module is a multiplexer that selects between two 8-bit inputs based on a control signal. It is used for dynamic data routing in the pipelined CPU.
+
+- Hazard Detection Unit: This unit is responsible for detecting data hazards that may occur during instruction execution. It monitors the pipeline registers and control signals to determine if a stall is necessary to prevent incorrect data usage.
+
+- Comparator: This module compares two input values and provides an output based on the comparison result. It is useful for conditional operations and decision-making processes within the CPU.
+
 ## Datapath
 
-![Datapath](https://i.imgur.com/LNYuwiF.jpeg)
+![Datapath](https://i.imgur.com/yyXykNn.jpeg)
 
 ## Requirements
 
@@ -53,7 +61,7 @@ ModelSim> run -all
 
 ## Testing
 
-- Testbenches are provided for each pipeline stage.
+- Testbenches are provided for each module.
 - Ensure all testbenches pass before running the full CPU simulation.
 
 ## License
