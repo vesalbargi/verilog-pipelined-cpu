@@ -20,8 +20,8 @@ module MEM_WB_reg (
       WB_mem_data <= 32'b0;
       WB_reg_dst_mux_out <= 5'b0;
     end else begin
-      WB_reg_write <= MEM_wb[0];
-      WB_mem_to_reg <= MEM_wb[1];
+      WB_reg_write <= MEM_wb[1];
+      WB_mem_to_reg <= MEM_wb[0];
       WB_alu_result <= MEM_alu_result;
       WB_mem_data <= MEM_mem_data;
       WB_reg_dst_mux_out <= MEM_reg_dst_mux_out;

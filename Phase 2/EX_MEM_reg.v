@@ -9,9 +9,9 @@ module EX_MEM_reg (
     input [31:0] EX_forward_b_mux_out,
     input [4:0] EX_reg_dst_mux_out,
     output reg [1:0] MEM_wb,
-    output reg MEM_branch,
     output reg MEM_mem_read,
     output reg MEM_mem_write,
+    output reg MEM_branch,
     output reg [31:0] MEM_branch_target,
     output reg MEM_zero,
     output reg [31:0] MEM_alu_result,
@@ -22,9 +22,9 @@ module EX_MEM_reg (
   always @(posedge clk) begin
     if (startin) begin
       MEM_wb <= 2'b0;
-      MEM_branch <= 1'b0;
       MEM_mem_read <= 1'b0;
       MEM_mem_write <= 1'b0;
+      MEM_branch <= 1'b0;
       MEM_branch_target <= 32'b0;
       MEM_zero <= 1'b0;
       MEM_alu_result <= 32'b0;
@@ -32,9 +32,9 @@ module EX_MEM_reg (
       MEM_reg_dst_mux_out <= 5'b0;
     end else begin
       MEM_wb <= EX_wb;
-      MEM_branch <= EX_m[2];
-      MEM_mem_read <= EX_m[0];
+      MEM_mem_read <= EX_m[2];
       MEM_mem_write <= EX_m[1];
+      MEM_branch <= EX_m[0];
       MEM_branch_target <= EX_branch_target;
       MEM_zero <= EX_zero;
       MEM_alu_result <= EX_alu_result;
