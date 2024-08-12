@@ -6,16 +6,16 @@ module Main (
 );
   wire [31:0] pc_out, pc_next, pc_plus_4, IF_instr;
 
-  wire [1:0] ID_wb, alu_op;
-  wire [2:0] ID_m;
-  wire [3:0] ID_ex, alu_ctrl;
+  wire [1:0] alu_op;
+  wire [3:0] alu_ctrl;
   wire [31:0] ID_reg_data1, ID_reg_data2, ID_sign_ext_imm, ID_instr, ID_pc_plus_4;
   wire reg_dst, branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write;
 
   wire [1:0] EX_wb, EX_alu_op;
   wire [2:0] EX_m;
   wire EX_reg_dst, EX_alu_src, EX_zero;
-  wire [31:0] EX_instr, EX_pc_plus_4, EX_reg_data1, EX_reg_data2, EX_sign_ext_imm, EX_sign_ext_shifted;
+  wire [31:0] EX_pc_plus_4, EX_reg_data1, EX_reg_data2, EX_sign_ext_imm, EX_sign_ext_shifted;
+  wire [4:0] EX_instr_15_11, EX_instr_20_16, EX_instr_25_21;
 
   wire [1:0] forward_a, forward_b;
   wire [31:0] EX_alu_result, EX_forward_a_mux_out, EX_forward_b_mux_out, EX_branch_target, alu_input2;
@@ -94,7 +94,7 @@ module Main (
       .startin(startin),
       .ID_wb({reg_write, mem_to_reg}),
       .ID_m({mem_read, mem_write, branch}),
-      .ID_ex({alu_op, alu_src, reg_dst}),
+      .ID_ex({alu_src, alu_op, reg_dst}),
       .ID_pc_plus_4(ID_pc_plus_4),
       .ID_reg_data1(ID_reg_data1),
       .ID_reg_data2(ID_reg_data2),
@@ -105,24 +105,24 @@ module Main (
       .ID_instr_15_11(ID_instr[15:11]),
       .EX_wb(EX_wb),
       .EX_m(EX_m),
-      .EX_reg_dst(EX_reg_dst),
-      .EX_alu_op(EX_alu_op),
       .EX_alu_src(EX_alu_src),
+      .EX_alu_op(EX_alu_op),
+      .EX_reg_dst(EX_reg_dst),
       .EX_pc_plus_4(EX_pc_plus_4),
       .EX_reg_data1(EX_reg_data1),
       .EX_reg_data2(EX_reg_data2),
       .EX_sign_ext_imm(EX_sign_ext_imm),
-      .EX_instr_25_21(EX_instr[25:21]),
-      .EX_instr_20_16(EX_instr[20:16]),
-      .EX_instr_20_16_extra(EX_instr[20:16]),
-      .EX_instr_15_11(EX_instr[15:11])
+      .EX_instr_25_21(EX_instr_25_21),
+      .EX_instr_20_16(EX_instr_20_16),
+      .EX_instr_20_16_extra(EX_instr_20_16),
+      .EX_instr_15_11(EX_instr_15_11)
   );
 
   forwarding_unit forwarding_unit (
-      .EX_MEM_regWrite(MEM_wb[0]),
+      .EX_MEM_regWrite(MEM_wb[1]),
       .MEM_WB_regWrite(WB_reg_write),
-      .ID_EX_rs(EX_instr[25:21]),
-      .ID_EX_rt(EX_instr[20:16]),
+      .ID_EX_rs(EX_instr_25_21),
+      .ID_EX_rt(EX_instr_20_16),
       .EX_MEM_rd(MEM_reg_dst_mux_out),
       .MEM_WB_rd(WB_reg_dst_mux_out),
       .ForwardA(forward_a),
@@ -153,7 +153,7 @@ module Main (
   );
 
   ALUControl alu_control (
-      .Func(EX_sign_ext_imm),
+      .Func(EX_sign_ext_imm[5:0]),
       .Aluop(EX_alu_op),
       .Alucontrol(alu_ctrl)
   );
@@ -167,8 +167,8 @@ module Main (
   );
 
   Mux5 reg_dst_mux (
-      .input1(EX_instr[20:16]),
-      .input2(EX_instr[15:11]),
+      .input1(EX_instr_20_16),
+      .input2(EX_instr_15_11),
       .op(EX_reg_dst),
       .out(EX_reg_dst_mux_out)
   );
@@ -195,9 +195,9 @@ module Main (
       .EX_forward_b_mux_out(EX_forward_b_mux_out),
       .EX_reg_dst_mux_out(EX_reg_dst_mux_out),
       .MEM_wb(MEM_wb),
-      .MEM_branch(MEM_branch),
       .MEM_mem_read(MEM_mem_read),
       .MEM_mem_write(MEM_mem_write),
+      .MEM_branch(MEM_branch),
       .MEM_branch_target(MEM_branch_target),
       .MEM_zero(MEM_zero),
       .MEM_alu_result(MEM_alu_result),
