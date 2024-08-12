@@ -9,7 +9,7 @@ module Main (
 
   wire [31:0] ID_instr, ID_pc_plus_4;
   wire [1:0] ID_wb;
-  wire [2:0] ID_m;
+  wire [1:0] ID_m;
   wire [3:0] ID_ex;
   wire [31:0] ID_reg_data1, ID_reg_data2, ID_sign_ext_imm, ID_sign_ext_shifted, ID_branch_target;
   wire reg_dst, branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write;
@@ -18,10 +18,11 @@ module Main (
   wire comparator_out;
 
   wire [1:0] EX_wb;
-  wire [2:0] EX_m;
+  wire [1:0] EX_m;
   wire EX_reg_dst, EX_alu_src;
   wire [1:0] EX_alu_op;
-  wire [31:0] EX_instr, EX_reg_data1, EX_reg_data2, EX_sign_ext_imm;
+  wire [31:0] EX_reg_data1, EX_reg_data2, EX_sign_ext_imm;
+  wire [4:0] EX_instr_15_11, EX_instr_20_16, EX_instr_25_21;
 
   wire [1:0] forward_a, forward_b;
   wire [31:0] EX_alu_result, EX_forward_a_mux_out, EX_forward_b_mux_out;
@@ -30,8 +31,8 @@ module Main (
 
   wire [ 1:0] MEM_wb;
   wire MEM_mem_read, MEM_mem_write;
-  wire [31:0] MEM_alu_result, MEM_reg_data2;
-  wire [4:0] MEM_reg_dst_mux_out;
+  wire [31:0] MEM_alu_result;
+  wire [ 4:0] MEM_reg_dst_mux_out;
   wire [31:0] MEM_mem_data, MEM_forward_b_mux_out;
 
   wire WB_reg_write, WB_mem_to_reg;
@@ -122,23 +123,23 @@ module Main (
       .ID_instr_15_11(ID_instr[15:11]),
       .EX_wb(EX_wb),
       .EX_m(EX_m),
-      .EX_reg_dst(EX_reg_dst),
-      .EX_alu_op(EX_alu_op),
       .EX_alu_src(EX_alu_src),
+      .EX_alu_op(EX_alu_op),
+      .EX_reg_dst(EX_reg_dst),
       .EX_reg_data1(EX_reg_data1),
       .EX_reg_data2(EX_reg_data2),
       .EX_sign_ext_imm(EX_sign_ext_imm),
-      .EX_instr_25_21(EX_instr[25:21]),
-      .EX_instr_20_16(EX_instr[20:16]),
-      .EX_instr_20_16_extra(EX_instr[20:16]),
-      .EX_instr_15_11(EX_instr[15:11])
+      .EX_instr_25_21(EX_instr_25_21),
+      .EX_instr_20_16(EX_instr_20_16),
+      .EX_instr_20_16_extra(EX_instr_20_16),
+      .EX_instr_15_11(EX_instr_15_11)
   );
 
   forwarding_unit forwarding_unit (
-      .EX_MEM_regWrite(MEM_wb[0]),
+      .EX_MEM_regWrite(MEM_wb[1]),
       .MEM_WB_regWrite(WB_reg_write),
-      .ID_EX_rs(EX_instr[20:16]),
-      .ID_EX_rt(EX_instr[15:11]),
+      .ID_EX_rs(EX_instr_25_21),
+      .ID_EX_rt(EX_instr_20_16),
       .EX_MEM_rd(MEM_reg_dst_mux_out),
       .MEM_WB_rd(WB_reg_dst_mux_out),
       .ForwardA(forward_a),
@@ -169,7 +170,7 @@ module Main (
   );
 
   ALUControl alu_control (
-      .Func(EX_sign_ext_imm),
+      .Func(EX_sign_ext_imm[5:0]),
       .Aluop(EX_alu_op),
       .Alucontrol(alu_ctrl)
   );
@@ -182,8 +183,8 @@ module Main (
   );
 
   Mux5 reg_dst_mux (
-      .input1(EX_instr[20:16]),
-      .input2(EX_instr[15:11]),
+      .input1(EX_instr_20_16),
+      .input2(EX_instr_15_11),
       .op(EX_reg_dst),
       .out(EX_reg_dst_mux_out)
   );
@@ -217,7 +218,7 @@ module Main (
 
   DataMemory data_memory (
       .Address(MEM_alu_result),
-      .WriteData(MEM_reg_data2),
+      .WriteData(MEM_forward_b_mux_out),
       .MemWrite(MEM_mem_write),
       .MemRead(MEM_mem_read),
       .Startin(startin),
@@ -255,8 +256,8 @@ module Main (
   hazard_detection_unit hazard_detection_unit (
       .IF_ID_rs(ID_instr[25:21]),
       .IF_ID_rt(ID_instr[20:16]),
-      .ID_EX_rt(EX_instr[20:16]),
-      .ID_EX_memRead(EX_m[0]),
+      .ID_EX_rt(EX_instr_20_16),
+      .ID_EX_memRead(EX_m[1]),
       .PCWrite(pc_write),
       .IF_IDWrite(IF_ID_write),
       .memRegWriteSelection(mem_reg_write_selection)
