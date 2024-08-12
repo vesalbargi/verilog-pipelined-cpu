@@ -18,12 +18,9 @@ module test_Main;
   initial begin
     clk = 1;
     startin = 1;
-    regNo = 5'd11;
+    regNo = 5'd14;
     #20;
     startin = 0;
-    $monitor("Control out: %b, ID_wb: %b, ID_m: %b, ID_ex: %b}", {
-             u1.reg_write, u1.mem_to_reg, u1.mem_read, u1.mem_write, u1.alu_src, u1.alu_op,
-             u1.reg_dst}, u1.ID_wb, u1.ID_m, u1.ID_ex);
     #10;
   end
 endmodule
