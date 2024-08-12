@@ -1,1 +1,190 @@
+{C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Shift26to28.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Shift26to28.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Shift26to28
 
+Top level modules:
+	Shift26to28
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/MEM_WB_reg.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/MEM_WB_reg.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module MEM_WB_reg
+
+Top level modules:
+	MEM_WB_reg
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/RegisterFile.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/RegisterFile.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/mux_8_2Inputs.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/mux_8_2Inputs.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module mux_8_2Inputs
+
+Top level modules:
+	mux_8_2Inputs
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/hazard_detection_unit.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/hazard_detection_unit.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module hazard_detection_unit
+
+Top level modules:
+	hazard_detection_unit
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_comparator.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_comparator.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module test_comparator
+
+Top level modules:
+	test_comparator
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/EX_MEM_reg.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/EX_MEM_reg.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module EX_MEM_reg
+
+Top level modules:
+	EX_MEM_reg
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/comparator.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/comparator.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module comparator
+
+Top level modules:
+	comparator
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/SignExtend.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/SignExtend.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module SignExtend
+
+Top level modules:
+	SignExtend
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Add.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Add.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Add
+
+Top level modules:
+	Add
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/InstructionMemory.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/InstructionMemory.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/DataMemory.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/DataMemory.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ALUControl.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ALUControl.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ALUControl
+
+Top level modules:
+	ALUControl
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ShiftLeft2.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ShiftLeft2.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ShiftLeft2
+
+Top level modules:
+	ShiftLeft2
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/mux_32_3Inputs.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/mux_32_3Inputs.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module mux_32_3Inputs
+
+Top level modules:
+	mux_32_3Inputs
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/PC.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/PC.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_Main.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_Main.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module test_Main
+
+Top level modules:
+	test_Main
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_mux_8_2Inputs.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_mux_8_2Inputs.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module test_mux_8_2Inputs
+
+Top level modules:
+	test_mux_8_2Inputs
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Main.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Main.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Main
+
+Top level modules:
+	Main
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ID_EX_reg.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ID_EX_reg.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ID_EX_reg
+
+Top level modules:
+	ID_EX_reg
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_hazard_detection_unit.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/test_hazard_detection_unit.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module test_hazard_detection_unit
+
+Top level modules:
+	test_hazard_detection_unit
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Mux5.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Mux5.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Mux5
+
+Top level modules:
+	Mux5
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Mux32.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Mux32.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Mux32
+
+Top level modules:
+	Mux32
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/IF_ID_reg.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/IF_ID_reg.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module IF_ID_reg
+
+Top level modules:
+	IF_ID_reg
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Control.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/Control.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module Control
+
+Top level modules:
+	Control
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/forwarding_unit.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/forwarding_unit.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module forwarding_unit
+
+Top level modules:
+	forwarding_unit
+
+} {} {}} {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ALU.v} {1 {vlog -work work -vopt -stats=none {C:/Users/Vesal/Documents/Modelsim/Pipeline/Phase 3/ALU.v}
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}}

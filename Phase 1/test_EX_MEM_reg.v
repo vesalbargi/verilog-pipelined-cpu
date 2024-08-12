@@ -9,7 +9,7 @@ module test_EX_MEM_reg;
   reg EX_zero;
   reg [31:0] EX_alu_result;
   reg [31:0] EX_reg_data2;
-  reg [4:0] EX_mux_out;
+  reg [4:0] EX_reg_dst_mux_out;
   wire [1:0] MEM_wb;
   wire MEM_branch;
   wire MEM_mem_read;
@@ -18,7 +18,7 @@ module test_EX_MEM_reg;
   wire MEM_zero;
   wire [31:0] MEM_alu_result;
   wire [31:0] MEM_reg_data2;
-  wire [4:0] MEM_mux_out;
+  wire [4:0] MEM_reg_dst_mux_out;
 
   EX_MEM_reg u1 (
       .clk(clk),
@@ -29,7 +29,7 @@ module test_EX_MEM_reg;
       .EX_zero(EX_zero),
       .EX_alu_result(EX_alu_result),
       .EX_reg_data2(EX_reg_data2),
-      .EX_mux_out(EX_mux_out),
+      .EX_reg_dst_mux_out(EX_reg_dst_mux_out),
       .MEM_wb(MEM_wb),
       .MEM_branch(MEM_branch),
       .MEM_mem_read(MEM_mem_read),
@@ -38,7 +38,7 @@ module test_EX_MEM_reg;
       .MEM_zero(MEM_zero),
       .MEM_alu_result(MEM_alu_result),
       .MEM_reg_data2(MEM_reg_data2),
-      .MEM_mux_out(MEM_mux_out)
+      .MEM_reg_dst_mux_out(MEM_reg_dst_mux_out)
   );
 
   always #10 clk = ~clk;
@@ -52,7 +52,7 @@ module test_EX_MEM_reg;
     EX_zero = 0;
     EX_alu_result = 32'h00000000;
     EX_reg_data2 = 32'h00000000;
-    EX_mux_out = 5'b00000;
+    EX_reg_dst_mux_out = 5'b00000;
     #20;
     EX_wb = 2'b01;
     EX_m = 3'b110;
@@ -60,7 +60,7 @@ module test_EX_MEM_reg;
     EX_zero = 1;
     EX_alu_result = 32'hDEADBEEF;
     EX_reg_data2 = 32'hCAFEBABE;
-    EX_mux_out = 5'b10101;
+    EX_reg_dst_mux_out = 5'b10101;
     #20;
     startin = 1;
     #20;
@@ -71,7 +71,7 @@ module test_EX_MEM_reg;
     EX_zero = 0;
     EX_alu_result = 32'h12345678;
     EX_reg_data2 = 32'h87654321;
-    EX_mux_out = 5'b01010;
+    EX_reg_dst_mux_out = 5'b01010;
     #20;
     startin = 1;
     #20;
@@ -82,7 +82,7 @@ module test_EX_MEM_reg;
     EX_zero = 1;
     EX_alu_result = 32'h0F0F0F0F;
     EX_reg_data2 = 32'hF0F0F0F0;
-    EX_mux_out = 5'b11111;
+    EX_reg_dst_mux_out = 5'b11111;
     #20;
   end
 endmodule
