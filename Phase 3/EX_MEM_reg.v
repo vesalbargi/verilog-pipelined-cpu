@@ -2,7 +2,7 @@ module EX_MEM_reg (
     input clk,
     input startin,
     input [1:0] EX_wb,
-    input [2:0] EX_m,
+    input [1:0] EX_m,
     input [31:0] EX_alu_result,
     input [31:0] EX_forward_b_mux_out,
     input [4:0] EX_reg_dst_mux_out,
@@ -24,8 +24,8 @@ module EX_MEM_reg (
       MEM_reg_dst_mux_out <= 5'b0;
     end else begin
       MEM_wb <= EX_wb;
-      MEM_mem_read <= EX_m[0];
-      MEM_mem_write <= EX_m[1];
+      MEM_mem_read <= EX_m[1];
+      MEM_mem_write <= EX_m[0];
       MEM_alu_result <= EX_alu_result;
       MEM_forward_b_mux_out <= EX_forward_b_mux_out;
       MEM_reg_dst_mux_out <= EX_reg_dst_mux_out;

@@ -12,7 +12,7 @@ module IF_ID_reg (
     if (startin) begin
       ID_instr <= 32'b0;
       ID_pc_plus_4 <= 32'b0;
-    end else begin
+    end else if (IF_IDWrite) begin
       ID_instr <= IF_instr;
       ID_pc_plus_4 <= IF_pc_plus_4;
     end
