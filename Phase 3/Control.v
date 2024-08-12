@@ -52,6 +52,16 @@ module Control (
         alusrc = 0;
         regwrite = 0;
       end
+      6'b001000: begin
+        regdst = 0;
+        branch = 0;
+        memread = 0;
+        memtoreg = 0;
+        aluop = 2'b00;
+        memwrite = 0;
+        alusrc = 1;
+        regwrite = 1;
+      end
       6'b000010: begin
         regdst = 1'bx;
         branch = 0;
