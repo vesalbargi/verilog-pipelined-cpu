@@ -7,7 +7,7 @@ module DataMemory (
     input clk,
     output [31:0] ReadData
 );
-  reg [7:0] memory[0:43];
+  reg [7:0] memory[43:0];
 
   assign ReadData = (MemRead) ? {memory[Address], memory[Address+1], memory[Address+2], memory[Address+3]} : 32'bx;
 
