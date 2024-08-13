@@ -198,8 +198,8 @@ module Main (
   );
 
   Mux32 mem_to_reg_mux (
-      .input1(WB_mem_data),
-      .input2(WB_alu_result),
+      .input1(WB_alu_result),
+      .input2(WB_mem_data),
       .op(WB_mem_to_reg),
       .out(WB_mem_to_reg_mux_out)
   );
