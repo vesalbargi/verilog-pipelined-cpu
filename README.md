@@ -36,7 +36,7 @@ This is a ModelSim project that implements a MIPS pipelined CPU using Verilog. T
 Clone the project
 
 ```bash
-git clone https://github.com/VesalBargi/verilog-pipeline.git
+git clone https://github.com/vesalbargi/verilog-pipelined-cpu.git
 ```
 
 Open ModelSim and load the project
