@@ -19,8 +19,7 @@ module RegisterFile (
 
   always @(posedge clk) begin
     if (startin) begin
-      registers[0]  <= 32'b0;
-      registers[8] <= 32'b0;
+      registers[0] <= 32'b0;
     end
     if (RegWrite) begin
       if (WriteReg != 0) begin
