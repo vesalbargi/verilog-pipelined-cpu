@@ -1,0 +1,87 @@
+# Ignore ModelSim simulation files
+modelsim.ini
+work/
+*.wlf
+*.log
+*.sdf
+*.vcd
+*.tcl
+*.do
+*.prj
+*.dmp
+*.sdf
+*.sim
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Ignore VS Code settings
+.vscode/
+*.code-workspace
+
+# Ignore Phase 1 files
+Phase 1/modelsim.ini
+Phase 1/work/
+Phase 1/*.wlf
+Phase 1/*.log
+Phase 1/*.sdf
+Phase 1/*.vcd
+Phase 1/*.tcl
+Phase 1/*.do
+Phase 1/*.prj
+Phase 1/*.dmp
+Phase 1/*.sdf
+Phase 1/*.sim
+Phase 1/*.tmp
+Phase 1/*.temp
+Phase 1/*.bak
+Phase 1/*.swp
+Phase 1/*.swo
+Phase 1/.vscode/
+Phase 1/*.code-workspace
+
+# Ignore Phase 2 files
+Phase 2/modelsim.ini
+Phase 2/work/
+Phase 2/*.wlf
+Phase 2/*.log
+Phase 2/*.sdf
+Phase 2/*.vcd
+Phase 2/*.tcl
+Phase 2/*.do
+Phase 2/*.prj
+Phase 2/*.dmp
+Phase 2/*.sdf
+Phase 2/*.sim
+Phase 2/*.tmp
+Phase 2/*.temp
+Phase 2/*.bak
+Phase 2/*.swp
+Phase 2/*.swo
+Phase 2/.vscode/
+Phase 2/*.code-workspace
+
+# Ignore Phase 3 files
+Phase 3/modelsim.ini
+Phase 3/work/
+Phase 3/*.wlf
+Phase 3/*.log
+Phase 3/*.sdf
+Phase 3/*.vcd
+Phase 3/*.tcl
+Phase 3/*.do
+Phase 3/*.prj
+Phase 3/*.dmp
+Phase 3/*.sdf
+Phase 3/*.sim
+Phase 3/*.tmp
+Phase 3/*.temp
+Phase 3/*.bak
+Phase 3/*.swp
+Phase 3/*.swo
+Phase 3/.vscode/
+Phase 3/*.code-workspace
